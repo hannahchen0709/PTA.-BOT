@@ -1,5 +1,5 @@
 First, We need to include the required packages.
-
+```
 #include "Walk.hpp"
 #include <webots/LED.hpp>
 #include <webots/Motor.hpp>
@@ -15,7 +15,8 @@ First, We need to include the required packages.
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+```
 
 #### Text-to-speech
-  mSpeaker = getSpeaker("Speaker");  
-  mSpeaker->setLanguage("en-US");
+  ```mSpeaker = getSpeaker("Speaker");  
+  mSpeaker->setLanguage("en-US");```
