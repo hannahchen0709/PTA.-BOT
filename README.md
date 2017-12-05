@@ -18,6 +18,32 @@ First, We need to include the required packages.
 ```
 
 #### -Text-to-speech
-  ```mSpeaker = getSpeaker("Speaker");  
+  ```
+  mSpeaker = getSpeaker("Speaker");  
   mSpeaker->setLanguage("en-US");
   ```
+  
+### -Motion
+Define 20 MOTORS and assign to positionSensors[].
+```
+for (int i=0; i<NMOTORS; i++) {
+   mMotors[i] = getMotor(motorNames[i]);
+   string sensorName = motorNames[i];
+   sensorName.push_back('S');
+   mPositionSensors[i] = getPositionSensor(sensorName);
+   mPositionSensors[i]->enable(mTimeStep);
+  }
+```
+
+Let MotionManager operate this robot.
+`mMotionManager = new RobotisOp2MotionManager(this);`
+
+Do the `"hand_extend.motion"` two times for demonstration
+```
+Motion motion_1("hand_extend.motion");
+    int time1 = motion_1.getDuration();
+    for (int i=0; i<2; i++){
+    	motion_1.play();
+    	wait(time1);
+    }
+```
