@@ -52,6 +52,7 @@ Motion motion_1("hand_extend.motion");
 ```
 
 ![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
+
 `"hand_extend.motion"`
 ```
 #WEBOTS_MOTION,V1.0,ArmLowerL,ArmUpperL,ShoulderL,ArmLowerR,ArmUpperR,ShoulderR
