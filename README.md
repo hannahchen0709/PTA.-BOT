@@ -55,7 +55,7 @@ Motion motion_1("hand_extend.motion");
 ![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
 
 Change the rad of six servos to get motions.
-`"hand_extend.motion"`:
+```-"hand_extend.motion"```:
 ```
 #WEBOTS_MOTION,V1.0,ArmLowerL,ArmUpperL,ShoulderL,ArmLowerR,ArmUpperR,ShoulderR
 00:00:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
