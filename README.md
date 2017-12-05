@@ -1,6 +1,6 @@
 First, We need to include the required packages.
->#include "Walk.hpp"
-> #include <webots/LED.hpp>
+#include "Walk.hpp"
+#include <webots/LED.hpp>
 #include <webots/Motor.hpp>
 #include <webots/PositionSensor.hpp>
 #include <RobotisOp2MotionManager.hpp>
@@ -11,7 +11,9 @@ First, We need to include the required packages.
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
-#include <string.h>`
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 #### Text-to-speech
 `code(mSpeaker = getSpeaker("Speaker");  
