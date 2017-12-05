@@ -52,16 +52,23 @@ Motion motion_1("hand_extend.motion");
     	wait(time1);
     }
 ```
-OP2 SERVOS:
-  ![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
+![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
 
-`"hand_extend.motion"`
+Change the rad of six servos to get motions.
+`"hand_extend.motion"`:
 ```
 #WEBOTS_MOTION,V1.0,ArmLowerL,ArmUpperL,ShoulderL,ArmLowerR,ArmUpperR,ShoulderR
 00:00:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 00:02:000,handsExtend,1.63, -0.8, -1.65,-1.65, 0.8, 1.65
 00:04:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 ```
+-`"hand_high.motion"`:
+```
+#WEBOTS_MOTION,V1.0,ArmLowerL,ArmUpperL,ShoulderL,ArmLowerR,ArmUpperR,ShoulderR
+00:00:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
+00:02:000,handsUp,1.63,0.77,-3.14,-1.65,-0.68,3.14
+00:04:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 
+```
 
 
