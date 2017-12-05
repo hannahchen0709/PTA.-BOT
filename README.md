@@ -36,10 +36,12 @@ for (int i=0; i<NMOTORS; i++) {
 ```
 
 Let MotionManager operate this robot.
-```mMotionManager = new RobotisOp2MotionManager(this);
+```
+mMotionManager = new RobotisOp2MotionManager(this);
 ```
 Get frequency
-```Motion::getDuration();
+```
+Motion::getDuration();
 ```
 Do the `"hand_extend.motion"` two times for demonstration
 ```
