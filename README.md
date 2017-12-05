@@ -43,6 +43,10 @@ Get frequency
 ```
 Motion::getDuration();
 ```
+The step method has to be called to run it (before calling the robot step function).
+```
+myStep();
+```
 Do the `"hand_extend.motion"` two times for demonstration
 ```
 Motion motion_1("hand_extend.motion");
@@ -56,20 +60,27 @@ Motion motion_1("hand_extend.motion");
 
 Change the rad of six servos to get motions.
 
--```"hand_extend.motion"```:
+```"hand_extend.motion"```:
 ```
 #WEBOTS_MOTION,V1.0,ArmLowerL,ArmUpperL,ShoulderL,ArmLowerR,ArmUpperR,ShoulderR
 00:00:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 00:02:000,handsExtend,1.63, -0.8, -1.65,-1.65, 0.8, 1.65
 00:04:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 ```
--`"hand_high.motion"`:
+`"hand_high.motion"`:
 ```
 #WEBOTS_MOTION,V1.0,ArmLowerL,ArmUpperL,ShoulderL,ArmLowerR,ArmUpperR,ShoulderR
 00:00:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 00:02:000,handsUp,1.63,0.77,-3.14,-1.65,-0.68,3.14
 00:04:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
-
 ```
 
-
+```
+mMotionManager->playPage(15);
+    wait(500);
+    mMotionManager->playPage(1);
+```
+Play a motion.
+```
+void playPage(int id);
+```
