@@ -52,8 +52,8 @@ Motion motion_1("hand_extend.motion");
     	wait(time1);
     }
 ```
->OP2 SERVOS:
->![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
+OP2 SERVOS:
+  ![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
 
 `"hand_extend.motion"`
 ```
