@@ -17,7 +17,8 @@ First, We need to include the required packages.
 #include <sys/wait.h>
 ```
 ### -Main.cpp
-Connectting with two servers, and then after PTA.BOT greets user and demonstrates the motion of exercise-One, we will communicate with two servers including sending and receiving data. Those data will save to resultFromCNN.Meanwhile, the user is doing exercise-One. Therefore, PTA.BOT can encourage the user. After finishing exercise-One
+
+By Connecting with two servers, PTA.BOT greets user and demonstrates the motion of exercise-One, and then we will communicate with two servers including sending and receiving data. Those data will save to resultFromCNN. Meanwhile, the user is doing exercise-One. Therefore, PTA.BOT can encourage the user. After finishing exercise-One, PTA.BOT can make a decision of getUpdatedlevel() for next motion. The processes of second and third motion are as well as the first one. Lastly, there has an end of section. 
 ```
   controller->createSocketWithServers(fd,fd2,g);
   controller->textToSpeechGreeting();
@@ -91,6 +92,14 @@ case 2:  strncpy(command, "15", sizeof(command) - 1);
 ### -Motion
 Define 20 MOTORS and assign to positionSensors[].
 ```
+static const char *motorNames[NMOTORS] = {
+  "ShoulderR" /*ID1 */, "ShoulderL" /*ID2 */, "ArmUpperR" /*ID3 */, "ArmUpperL" /*ID4 */,
+  "ArmLowerR" /*ID5 */, "ArmLowerL" /*ID6 */, "PelvYR"    /*ID7 */, "PelvYL"    /*ID8 */,
+  "PelvR"     /*ID9 */, "PelvL"     /*ID10*/, "LegUpperR" /*ID11*/, "LegUpperL" /*ID12*/,
+  "LegLowerR" /*ID13*/, "LegLowerL" /*ID14*/, "AnkleR"    /*ID15*/, "AnkleL"    /*ID16*/,
+  "FootR"     /*ID17*/, "FootL"     /*ID18*/, "Neck"      /*ID19*/, "Head"      /*ID20*/
+};
+
 for (int i=0; i<NMOTORS; i++) {
    mMotors[i] = getMotor(motorNames[i]);
    string sensorName = motorNames[i];
@@ -112,15 +121,7 @@ The step method has to be called to run it (before calling the robot step functi
 ```
 myStep();
 ```
-Do the `"hand_extend.motion"` two times for demonstration
-```
-Motion motion_1("hand_extend.motion");
-    int time1 = motion_1.getDuration();
-    for (int i=0; i<2; i++){
-    	motion_1.play();
-    	wait(time1);
-    }
-```
+
 ![OP2 SERVOS](https://raw.githubusercontent.com/omichel/webots-doc/master/robotis-op2/images/robotis_op2_servo_map.png)
 
 Change the rad of six servos to get motions.
@@ -139,16 +140,32 @@ Change the rad of six servos to get motions.
 00:02:000,handsUp,1.63,0.77,-3.14,-1.65,-0.68,3.14
 00:04:000,handsU,0.02,-0.8,-1.65,-0.02,0.8,1.65
 ```
-
+Do `"hand_extend.motion"`and `"hand_high.motion"` each for two times for demonstration.
 ```
-mMotionManager->playPage(15);
-    wait(500);
-    mMotionManager->playPage(1);
+Motion motion_1("hand_extend.motion");
+    int time1 = motion_1.getDuration();
+    for (int i=0; i<2; i++){
+    	motion_1.play();
+    	wait(time1);
+    }
 ```
+```
+Motion motion_2("hand_high.motion");
+    int time2 = motion_2.getDuration();
+    for (int i=0; i<2; i++){
+    	motion_2.play();
+    	wait(time2);
+    }
+```
+![OP2 motion files](https://i.imgur.com/PZbc2a2.png)
 Play a motion.
 ```
 void playPage(int id);
 ```
-![OP2 motion files](https://i.imgur.com/PZbc2a2.png)
+```
+mMotionManager->playPage(15);
+    wait(500);
+mMotionManager->playPage(1);
+```
 
 
