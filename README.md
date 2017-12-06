@@ -16,6 +16,25 @@ First, We need to include the required packages.
 #include <unistd.h>
 #include <sys/wait.h>
 ```
+### -Main.cpp
+```
+  controller->run(fd,fd2,g);
+  controller->textToSpeechGreeting();
+  controller->runExerciseOne(g,command,fd);
+  resultFromCNN = controller->communicateWithServer(g,currentLevel,fd,fd2);
+  std::cout << "after movement1, Result from CNN " << resultFromCNN << std::endl;
+  controller->textToSpeechEncourage();
+  controller->getUpdatedLevel(currentLevel,resultFromCNN);
+  controller->runExerciseTwo(g,currentLevel,fd);
+  resultFromCNN = controller->communicateWithServer(g,currentLevel,fd,fd2);
+  std::cout << "after movement2, Result from CNN " << resultFromCNN << std::endl;
+  controller->textToSpeechEncourage();
+  controller->getUpdatedLevel(currentLevel,resultFromCNN);
+  controller->runExerciseThree(g,currentLevel,fd);
+  resultFromCNN = controller->communicateWithServer(g,currentLevel,fd,fd2);
+  std::cout << "after movement3, Result from CNN " << resultFromCNN << std::endl;
+  controller->textToSpeechEnding();
+```
 
 #### -Text-to-speech
 The volume argument allows the user to specify the volume of this sound (between 0.0 and 1.0).
