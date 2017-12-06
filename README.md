@@ -17,8 +17,9 @@ First, We need to include the required packages.
 #include <sys/wait.h>
 ```
 ### -Main.cpp
+Connectting with two servers, and then after PTA.BOT greets user and demonstrates the motion of exercise-One, we will communicate with two servers including sending and receiving data. Those data will save to resultFromCNN.Meanwhile, the user is doing exercise-One. Therefore, PTA.BOT can encourage the user. After finishing exercise-One
 ```
-  controller->run(fd,fd2,g);
+  controller->createSocketWithServers(fd,fd2,g);
   controller->textToSpeechGreeting();
   controller->runExerciseOne(g,command,fd);
   resultFromCNN = controller->communicateWithServer(g,currentLevel,fd,fd2);
