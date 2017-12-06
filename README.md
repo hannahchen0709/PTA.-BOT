@@ -158,6 +158,7 @@ Motion motion_2("hand_high.motion");
     }
 ```
 ![OP2 motion files](https://i.imgur.com/PZbc2a2.png)
+
 Play a motion.
 ```
 void playPage(int id);
