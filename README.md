@@ -18,7 +18,7 @@ First, We need to include the required packages.
 ```
 ### -Main.cpp
 
-By Connecting with two servers and setting up two sockets successfully , PTA.BOT will greets user and demonstrates the motion of exercise-One. And then, the robot communicate with two servers via sending and receiving data. Those data will save to resultFromCNN. Meanwhile, the user is doing exercise-One. Therefore, PTA.BOT can encourage the user. After finishing exercise-One, PTA.BOT can make a decision of getUpdatedlevel() for next motion. The processes of second and third motion are as well as the first one. Lastly, there has an end of section. 
+By Connecting with two servers and setting up two sockets successfully , PTA.BOT will greets user and demonstrates the motion of exercise-One. When user doing the exercise, PTA.BOT can encourage the user during ones doing the exercise. After the user finishing exercise-One, the robot will communicate with two servers to send and receive data. Those data will save to resultFromCNN. Therefore, PTA.BOT can make a decision of getUpdatedlevel() for next motion. The processes of second and third motion are as well as the first one. Lastly, there has an end of section. 
 ```
   controller->createSocketWithServers(fd,fd2,g);
   controller->textToSpeechGreeting();
