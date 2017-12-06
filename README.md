@@ -46,7 +46,21 @@ case 2:  strncpy(command, "15", sizeof(command) - 1);
          wait(6000); 
          break;
 ```
-  
+```
+  if(resultFromCNN == 0){
+    std::cout << "Result from CNN == 0, let's decrease level if posibble"<< std::endl;
+    currentLevel--;
+    if(currentLevel < 0){
+      currentLevel = 0;
+    }
+  }else if(resultFromCNN == 1){
+    std::cout << "Result from CNN == 1, let's increase level if posibble"<< std::endl;
+    currentLevel++;
+    if(currentLevel > 2){
+      currentLevel = 2;
+    }
+  }
+```
 ### -Motion
 Define 20 MOTORS and assign to positionSensors[].
 ```
