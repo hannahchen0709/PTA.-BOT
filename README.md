@@ -22,6 +22,28 @@ First, We need to include the required packages.
   mSpeaker = getSpeaker("Speaker");  
   mSpeaker->setLanguage("en-US");
   ```
+Encouragement function
+```
+  mSpeaker->speak("You can do it!",1.0);
+  wait(3000);
+  mSpeaker->speak("Keep Going!",1.0);
+  wait(1000);
+```
+Three difficult level
+```
+case 0:  strncpy(command, "5", sizeof(command) - 1);
+         mSpeaker->speak("Let’s start with our third exercise. Please follow the demonstration and repeat three times.",1.0);
+         wait(6000); 
+         break;
+case 1:  strncpy(command, "10", sizeof(command) - 1);
+         mSpeaker->speak("Let’s start with our third exercise. Please follow the demonstration and repeat five times.",1.0);
+         wait(6000); 
+         break;
+case 2:  strncpy(command, "15", sizeof(command) - 1);
+         mSpeaker->speak("Let’s start with our third exercise. Please follow the demonstration and repeat eight times.",1.0);
+         wait(6000); 
+         break;
+```
   
 ### -Motion
 Define 20 MOTORS and assign to positionSensors[].
