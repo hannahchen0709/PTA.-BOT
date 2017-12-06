@@ -53,10 +53,11 @@ Encouragement function
 ```
 Three difficult level
 
+|Level |Repeat times|
 |:-----|:-----------|
-| Easy |3 Repetition|
+|Easy  |3 Repetition|
 |Medium|5 Repetition|
-| Hard |8 Repetition|
+|Hard  |8 Repetition|
 
 ```
 case 0:  strncpy(command, "5", sizeof(command) - 1);
