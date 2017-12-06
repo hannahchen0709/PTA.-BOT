@@ -18,9 +18,11 @@ First, We need to include the required packages.
 ```
 
 #### -Text-to-speech
+The volume argument allows the user to specify the volume of this sound (between 0.0 and 1.0).
   ```
   mSpeaker = getSpeaker("Speaker");  
-  mSpeaker->setLanguage("en-US");
+  mSpeaker->setLanguage("en-US"); //en-US" for American English
+  Speaker::speak(const std::string &text, double volume);
   ```
 Encouragement function
 ```
