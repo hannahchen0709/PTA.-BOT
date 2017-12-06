@@ -52,6 +52,14 @@ Encouragement function
   wait(1000);
 ```
 Three difficult level
+
+| Easy |3 Repetition|
+|:-----|:-----------|
+|Medium|5 Repetition|
+|:-----|:-----------|
+| Hard |8 Repetition|
+|:-----|:-----------|
+
 ```
 case 0:  strncpy(command, "5", sizeof(command) - 1);
          mSpeaker->speak("Let’s start with our third exercise. Please follow the demonstration and repeat three times.",1.0);
